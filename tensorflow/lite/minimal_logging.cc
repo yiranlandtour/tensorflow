@@ -32,17 +32,17 @@ void MinimalLogger::Log(LogSeverity severity, const char* format, ...) {
 const char* MinimalLogger::GetSeverityName(LogSeverity severity) {
   switch (severity) {
     case TFLITE_LOG_VERBOSE:
-      return "VERBOSE";
+      return "[*] VERBOSE";
     case TFLITE_LOG_INFO:
-      return "INFO";
+      return "[+] INFO";
     case TFLITE_LOG_WARNING:
-      return "WARNING";
+      return "[!] WARNING";
     case TFLITE_LOG_ERROR:
-      return "ERROR";
+      return "[X] ERROR";
     case TFLITE_LOG_SILENT:
-      return "SILENT";
+      return "[-] SILENT";
   }
-  return "<Unknown severity>";
+  return "[?] Unknown severity";
 }
 
 LogSeverity MinimalLogger::GetMinimumLogSeverity() {
